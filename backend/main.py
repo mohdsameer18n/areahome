@@ -645,6 +645,10 @@ async def search_properties(request: SearchRequest):
         "requirements": requirements
     }
 
+@app.get("/")
+def root():
+    return {"message": "AreaHome API is running 🚀"}
+
 
 # 🟢 NEW: AI Chatbot endpoint
 @app.post("/api/chat")
