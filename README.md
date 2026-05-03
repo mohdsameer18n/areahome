@@ -87,7 +87,7 @@ Each property is evaluated on:
 
 ### 🏠 Home Page — Natural Language Search
 
-![Home](./screenshots/home (2).png)
+![Home](./screenshots/home(2).png)
 
 ### 📊 Results Page — Map + Property Listings + Scores
 
