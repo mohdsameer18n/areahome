@@ -33,7 +33,7 @@ export default function ResultsPage() {
 
     setLoading(true)
 
-    axios.post('http://localhost:8000/api/search', { query })
+    axios.post(`${import.meta.env.VITE_API_URL}/api/search`, { query })
       .then(res => {
         setResults(res.data.results || [])
 
