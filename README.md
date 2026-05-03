@@ -1,37 +1,45 @@
-# AreaHome 🏠
+# 🏡 AreaHome — Smart Property Finder
 
-AI-powered rental property search for Hyderabad, India.
+A full-stack web application that converts natural language queries into intelligent property recommendations.
 
-## Features
-- 🔍 Natural language property search ("2BHK in ECIL under ₹20k, girl-friendly")
-- 🗺️ Interactive 3D map with property markers and amenity icons
-- 🤖 AI chatbot powered by Gemini
-- 📊 Radar charts showing area scores (safety, water, IT proximity, etc.)
-- 🌤️ Live weather data per area
-- 👩 Smart social context (girl-friendly, bachelor-friendly, family societies)
-- 50+ Hyderabad areas covered
+Example:
+> "2BHK in ECIL under ₹20k, girl-friendly"
 
-## Tech Stack
-- **Backend**: FastAPI + Python + Gemini AI + Open-Meteo Weather API + OpenStreetMap
-- **Frontend**: React + Vite + Tailwind CSS + Leaflet Maps + Chart.js
+---
 
-## Setup
+## ✨ Features
+
+- 🔍 Natural language search → extracts BHK, budget, and location
+- 🧠 Smart recommendation engine:
+  - Exact match → higher → lower BHK prioritization
+  - Nearby area fallback
+  - Budget flexibility handling
+- 🗺️ Interactive map with property markers
+- 📊 Area scoring system (Safety, Water, IT proximity, Transport, etc.)
+- 👩 Social-aware filtering (girl-friendly, bachelor-friendly, family)
+- ⚡ Fast backend (no external API delays)
+
+---
+
+## 🛠 Tech Stack
+
+**Frontend**
+- React (Vite)
+- Tailwind CSS
+- MapLibre / Leaflet
+- Chart.js
+
+**Backend**
+- FastAPI (Python)
+- Async processing (asyncio)
+- Custom scoring & ranking engine
+
+---
+
+## ⚙️ Run Locally
 
 ### Backend
 ```bash
 cd backend
 pip install -r requirements.txt
-# Create .env file with:
-# GEMINI_API_KEY=your_key_here
 uvicorn main:app --reload
-```
-
-### Frontend
-```bash
-cd frontend
-npm install
-# Set your MapTiler key in src/pages/HomePage.jsx
-npm run dev
-```
-
-Open http://localhost:5173
