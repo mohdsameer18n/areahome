@@ -6,6 +6,7 @@ import google.generativeai as genai
 import re
 from dotenv import load_dotenv
 from enrichment import get_water_score, get_weather_score, get_area_scores, get_social_scores
+from fastapi.middleware.cors import CORSMiddleware
 
 AREA_NEARBY = {
     "gachibowli": ["kondapur", "madhapur", "hitech city"],
@@ -64,6 +65,18 @@ app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], all
 
 with open("properties.json", "r", encoding="utf-8") as f:
     ALL_PROPERTIES = json.load(f)
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://localhost:5173",
+        "https://areahome-hyd.vercel.app"
+    ],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # 🟢 CHANGED: Added amenities for ALL Hyderabad areas
 AREA_AMENITIES = {
